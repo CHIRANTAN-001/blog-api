@@ -1,6 +1,8 @@
 const express = require('express');
 const Blog = require('../models/blog.js');
 const router = express.Router();
+const NodeCache = require('node-cache');
+
 
 router.post('/', async (req, res) => {
     const { title, description, tags, imageUrl, authorName } = req.body;

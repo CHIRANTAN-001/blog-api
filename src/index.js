@@ -4,12 +4,16 @@ const bodyParser = require('body-parser');
 const blogsRouter = require('./routes/blogs.js')
 const connectDB = require('./db/index.js');
 const dotenv = require('dotenv');
-
+const cors = require('cors')
 dotenv.config({
     path: './.env'
 })
 
 const app = express();
+
+app.use(cors({
+    origin: '*',
+}))
 
 connectDB()
     .then(() => {
